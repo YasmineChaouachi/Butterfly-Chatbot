@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterfly</title>
+    <style>
+        #userbox {background-color: lightblue;}
+        body {padding-bottom: 100px;padding-top: 250px;padding-left: 100px;padding-right: 100px;background: #f5d0ea url("https://media.istockphoto.com/photos/cupcake-border-picture-id1211873554?k=20&m=1211873554&s=170667a&w=0&h=wOaiyztjXKS5pTrql02KCqVHXoB7ddzvRwJVcCq9DF0=") no-repeat local 50% 0%; background-size: 100%;}
+        #chatLog{text-align: center; color: rgb(0, 0, 0);}
+        h1 {text-align: initial;color: rgb(216, 98, 181); text-decoration-color: rgb(230, 173, 211);font-size: 50px;text-align: center;}
+        span {color: rgb(255, 255, 255);}
+        span {text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #be5fa1, 0 0 30px #cf56a1, 0 0 40px #92358a, 0 0 55px #df76c8, 0 0 75px #e58aa8;}
+        h6 {color: rgba(0,0,0,0.6);
+            font-family: "Segoe Script", sans-serif , fixed;
+            font-size: 19px;
+            letter-spacing: 1px;
+            word-spacing: 1px;
+            text-shadow: 2px 8px 6px rgba(0,0,0,0.2),  rgb(137, 183, 221);}
+        input{border-radius: 30px;width: 180px;height: 26px;}   
+    </style>
+    <script>
+        var know = {
+            
+            "Bonjour":"Bonjour ! Bienvenue chez Butterfly . Je suis votre employé de magasin. Si vous avez besoin d'aide, envoyez-moi un message. ",
+            "J’ai besoin d’aide pour passer une commande de gâteau personnalisé":"Ce sera un plaisir de vous aider ! D'accord. Pour combien de personnes est-il votre gâteau ?",
+            "Environ 25 personnes":"Et quelle saveur préférez-vous ? ",
+            "Par rapport au goût, je préfère qu’il soit au pistache et au noisette praliné":"D’accord, donc votre commande est prise en compte et ça vous coûte 290dt… On vous appellera dès que votre commande soit prête . ",
+             "Très bien et merci !":"Je suis à votre service, au revoir et merci pou votre fidélité",
+        
+        };
+        function talk() {
+             var user =document.getElementById("userBox") .value; 
+             document.getElementById("chatLog").innerHTML +=user+"<br>";
+            if(user in know){
+                document.getElementById("chatLog").innerHTML += know[user]+"<br>";
+            } else{
+                document.getElementById("chatLog").innerHTML+="Merci de renvoyer votre message !";}
+            }
+                </script>
+        </head>
+</head>
+<body>
+    <div id="chatLog" > <h1  ><span>Butterfly</span><br></h1> 
+        <h6>Je Suis Butterflybot: Votre ChatBot qui vous aide à passer des commandes de gâteau de votre choix <br>
+        N'hésitez pas de me poser vos questions!</h6>
+        </div>  
+        <div  style= text-align:center; color: rgb(71, 143, 143 ) )>
+        <input id="userBox" type="text"  onkeydown="if(event.keyCode == 13){talk()}"></div> 
+</body>
+</html>
